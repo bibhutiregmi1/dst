@@ -7,94 +7,13 @@
     <title>Dropdown Example</title>
 </head>
 <body>
-  <p>Select a new car from the list.</p>
-  <form id="form1" action="/product" method="POST" enctype="multipart/form-data">
-      <select id="mySelect" name = "cars">
-       <option value="France">France</option>
-      <option value="Australia">Australia</option>
-      <option value="Netherlands">Netherlands</option>
-      <option value="Germany">Germany</option>
-      <option value="Norway">Norway</option>
-      <option value="EIRE">EIRE</option>
-      <option value="Switzerland">Switzerland</option>
-      <option value="Spain">Spain</option>
-      <option value="Poland">Poland</option>
-      <option value="Portugal">Portugal</option>
-      <option value="Italy">Italy</option>
-      <option value="Belgium">Belgium</option>
-      <option value="Lithuania">Lithuania</option>
-      <option value="Japan">Japan</option>
-      <option value="Iceland">Iceland</option>
-      <option value="Channel Islands">Channel Islands</option>
-      <option value="Denmark">Denmark</option>
-      <option value="Cyprus">Cyprus</option>
-      <option value="Sweden">Sweden</option>
-      <option value="Austria">Austria</option>
-      <option value="Israel">Israel</option>
-      <option value="Finland">Finland</option>
-      <option value="Bahrain">Bahrain</option>
-      <option value="Greece">Greece</option>
-      <option value="Hong Kong">Hong Kong</option>
-      <option value="Singapore">Singapore</option>
-      <option value="Lebanon">Lebanon</option>
-      <option value="United Arab Emirates">United Arab Emirates</option>
-      <option value="Saudi Arabia">Saudi Arabia</option>
-      <option value="Czech Republic">Czech Republic</option>
-      <option value="Canada">Canada</option>
-      <option value="Brazil">Brazil</option>
-      <option value="USA">USA</option>
-      <option value="European Community">European Community</option>
-      <option value="Malta">Malta</option>
-      <option value="RSA">RSA</option>
-    </select>
-
-    <select id="mySelect" name = "cars1">
-       <option value="France">France</option>
-      <option value="Australia">Australia</option>
-      <option value="Netherlands">Netherlands</option>
-      <option value="Germany">Germany</option>
-      <option value="Norway">Norway</option>
-      <option value="EIRE">EIRE</option>
-      <option value="Switzerland">Switzerland</option>
-      <option value="Spain">Spain</option>
-      <option value="Poland">Poland</option>
-      <option value="Portugal">Portugal</option>
-      <option value="Italy">Italy</option>
-      <option value="Belgium">Belgium</option>
-      <option value="Lithuania">Lithuania</option>
-      <option value="Japan">Japan</option>
-      <option value="Iceland">Iceland</option>
-      <option value="Channel Islands">Channel Islands</option>
-      <option value="Denmark">Denmark</option>
-      <option value="Cyprus">Cyprus</option>
-      <option value="Sweden">Sweden</option>
-      <option value="Austria">Austria</option>
-      <option value="Israel">Israel</option>
-      <option value="Finland">Finland</option>
-      <option value="Bahrain">Bahrain</option>
-      <option value="Greece">Greece</option>
-      <option value="Hong Kong">Hong Kong</option>
-      <option value="Singapore">Singapore</option>
-      <option value="Lebanon">Lebanon</option>
-      <option value="United Arab Emirates">United Arab Emirates</option>
-      <option value="Saudi Arabia">Saudi Arabia</option>
-      <option value="Czech Republic">Czech Republic</option>
-      <option value="Canada">Canada</option>
-      <option value="Brazil">Brazil</option>
-      <option value="USA">USA</option>
-      <option value="European Community">European Community</option>
-      <option value="Malta">Malta</option>
-      <option value="RSA">RSA</option>
-    </select>
+     <select name="list\_status">
+  {% value, human in listStatus %}
+    <option value="{{value}}" {% if value== default %} selected {% endif %}>{{human}}</option>
+  {% endfor %}
+</select>
     <input type="submit" value="Submit">
-  </form>
-  <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
-  <div id="result">
-    {% if car_brand is defined %}
-        You have selected: {{ car_brand }}
-    {% endif %}
-  </div>
-
+ 
   
 </body>
 </html>

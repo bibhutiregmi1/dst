@@ -69,7 +69,25 @@ def shop_basket():
 	    df = df[~df['Description'].str.contains('Manual')]
 	    df = df[~df['Description'].str.contains('POSTAGE')] 
 	    df = df[~df['Description'].str.startswith('?')]
-	    
+
+	def country_monthly_price(country):
+	    global df1_quantity
+	    Basket_France = df[df['Country']=='Germany'].copy(deep=True)
+	    Basket_France['yearmonth']=Basket_France["InvoiceDate"].map(lambda x: 100*x.year + x.month)
+	    Basket_France['TotalPrice']=Basket_France.Quantity * Basket_France.UnitPrice
+	    #df1_quantity = df.groupby(["Country","InvoiceDate"]).count().reset_index().sort_values('InvoiceNo', ascending = False).head()
+	    grouped = Basket_France.groupby(['yearmonth'])
+	    return grouped['TotalPrice'].agg(np.sum)
+
+	def country_monthly_quantity(country):
+	    global df1_quantity
+	    Basket_France = df[df['Country']=='Germany'].copy(deep=True)
+	    Basket_France['yearmonth']=Basket_France["InvoiceDate"].map(lambda x: 100*x.year + x.month)
+	    Basket_France['TotalPrice']=Basket_France.Quantity * Basket_France.UnitPrice
+	    #df1_quantity = df.groupby(["Country","InvoiceDate"]).count().reset_index().sort_values('InvoiceNo', ascending = False).head()
+	    grouped = Basket_France.groupby(['yearmonth'])
+	    return grouped['Quantity'].agg(np.sum)
+    
 	def country_quantity():
 	    global df1_quantity
 	    df1_quantity = df.groupby('Country').count().reset_index().sort_values('InvoiceNo', ascending = False).head()
@@ -140,4 +158,3 @@ def shop_basket():
 
 if __name__ == '__main__':
     app.run(host ='0.0.0.0', port = 3333, debug = True)
-
