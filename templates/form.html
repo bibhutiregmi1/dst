@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>dst app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+<body>
+<header>
+  <div class="container">
+    <h1 class="logo">DST web app</h1>
+    <strong><nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li ><a href="{{ url_for('my_form') }}">Shop</a></li>
+      </ul>
+    </nav></strong>
+  </div>
+</header>
+<div class="container">
+	this is form {{abc}}
+ 
+<table cellpadding="10px" cellpadding="20px">
+  <tr>
+   <td colspan="2"> <h1>Check your shopping basket data here</h1></td>
+  </tr>
+  <tr>
+    <td colspan="2">Enter the country you wish to see
+     <!-- <form method="POST">
+      <select name="text">
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+      </select>
+        <input type="submit" value="Submit">
+      </form> -->
+
+      <form method="POST">
+        <input name="text">
+        <input name="text1">
+        <input type="submit">
+      </form>
+    </td>
+
+  </tr>
+  <tr>
+    <td>country1: {{abc}}</td>
+    <td>country2: {{abc1}}</td>
+  </tr>
+  
+ 
+  <tr>
+      <td id="first">{{myvar}}</td>
+    <td id="second">{{myvar1}}</td>
+  </tr>
+
+</table>
+ 
+</div>
+</body>
+</html>
+<style type="text/css">
+
+            #first { 
+              background: #ddcaaa;
+
+              text-align: justify;
+            } 
+            #second {
+              background: #ddccee;
+
+              text-align: justify;
+            }
+
+
+            table, th, td {
+              border: 0px;
+              table-layout: auto; 
+              padding: 6px;
+              border-spacing: 8px 5px;
+              border-collapse: separate;
+            }
+            
+
+           
+            h1 { 
+                color:green; 
+            } 
+    </style>

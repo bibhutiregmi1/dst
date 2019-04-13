@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>dst app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+<body>
+<header>
+  <div class="container">
+    <h1 class="logo">DST web app</h1>
+    <strong><nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('my_form') }}">Shop</a></li>
+      </ul>
+    </nav></strong>
+  </div>
+</header>
+<div class="container">
+
+
+<table cellpadding="10px" cellpadding="20px">
+  <tr>
+  <td colspan="2"> <h1>Check your shopping basket data here</h1></td>
+  </tr>
+  <tr>
+   <td colspan="2">Enter the country you wish to see</td>
+  </tr>
+  <tr>
+      <td>country1</td>
+    <td>country2</td>
+  <tr>
+    <td colspan="2">
+      <form method="POST">
+        <input name="product">
+        <input type="submit">
+      </form>
+    </td>
+    
+  </tr>
+    <tr>
+    <td>{{abc}}</td>
+    <td>{{abc}}</td>
+  </tr>
+  <tr>
+      <td>{{myvar}}</td>
+    <td>{{myvar}}</td>
+  </tr>
+</table>
+ 
+  
+
+
+</div>
+</body>
+</html>
