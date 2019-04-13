@@ -1,57 +1,100 @@
-
 <!DOCTYPE html>
-<html>
- <head>
-    <title>dst app</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Ahmedur Rahman Shovon">
+    <title>Dropdown Example</title>
+</head>
 <body>
-<header>
-  <div class="container">
-    <h1 class="logo">DST web app</h1>
-    <strong><nav>
-      <ul class="menu">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('my_form') }}">Shop</a></li>
-      </ul>
-    </nav></strong>
+  <p>Select a new car from the list.</p>
+  <form id="form1" action="/product" method="POST" enctype="multipart/form-data">
+      <select id="mySelect" name = "cars">
+       <option value="France">France</option>
+      <option value="Australia">Australia</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Germany">Germany</option>
+      <option value="Norway">Norway</option>
+      <option value="EIRE">EIRE</option>
+      <option value="Switzerland">Switzerland</option>
+      <option value="Spain">Spain</option>
+      <option value="Poland">Poland</option>
+      <option value="Portugal">Portugal</option>
+      <option value="Italy">Italy</option>
+      <option value="Belgium">Belgium</option>
+      <option value="Lithuania">Lithuania</option>
+      <option value="Japan">Japan</option>
+      <option value="Iceland">Iceland</option>
+      <option value="Channel Islands">Channel Islands</option>
+      <option value="Denmark">Denmark</option>
+      <option value="Cyprus">Cyprus</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Austria">Austria</option>
+      <option value="Israel">Israel</option>
+      <option value="Finland">Finland</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="Greece">Greece</option>
+      <option value="Hong Kong">Hong Kong</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Lebanon">Lebanon</option>
+      <option value="United Arab Emirates">United Arab Emirates</option>
+      <option value="Saudi Arabia">Saudi Arabia</option>
+      <option value="Czech Republic">Czech Republic</option>
+      <option value="Canada">Canada</option>
+      <option value="Brazil">Brazil</option>
+      <option value="USA">USA</option>
+      <option value="European Community">European Community</option>
+      <option value="Malta">Malta</option>
+      <option value="RSA">RSA</option>
+    </select>
+
+    <select id="mySelect" name = "cars1">
+       <option value="France">France</option>
+      <option value="Australia">Australia</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Germany">Germany</option>
+      <option value="Norway">Norway</option>
+      <option value="EIRE">EIRE</option>
+      <option value="Switzerland">Switzerland</option>
+      <option value="Spain">Spain</option>
+      <option value="Poland">Poland</option>
+      <option value="Portugal">Portugal</option>
+      <option value="Italy">Italy</option>
+      <option value="Belgium">Belgium</option>
+      <option value="Lithuania">Lithuania</option>
+      <option value="Japan">Japan</option>
+      <option value="Iceland">Iceland</option>
+      <option value="Channel Islands">Channel Islands</option>
+      <option value="Denmark">Denmark</option>
+      <option value="Cyprus">Cyprus</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Austria">Austria</option>
+      <option value="Israel">Israel</option>
+      <option value="Finland">Finland</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="Greece">Greece</option>
+      <option value="Hong Kong">Hong Kong</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Lebanon">Lebanon</option>
+      <option value="United Arab Emirates">United Arab Emirates</option>
+      <option value="Saudi Arabia">Saudi Arabia</option>
+      <option value="Czech Republic">Czech Republic</option>
+      <option value="Canada">Canada</option>
+      <option value="Brazil">Brazil</option>
+      <option value="USA">USA</option>
+      <option value="European Community">European Community</option>
+      <option value="Malta">Malta</option>
+      <option value="RSA">RSA</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+  <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+  <div id="result">
+    {% if car_brand is defined %}
+        You have selected: {{ car_brand }}
+    {% endif %}
   </div>
-</header>
-<div class="container">
 
-
-<table cellpadding="10px" cellpadding="20px">
-  <tr>
-  <td colspan="2"> <h1>Check your shopping basket data here</h1></td>
-  </tr>
-  <tr>
-   <td colspan="2">Enter the country you wish to see</td>
-  </tr>
-  <tr>
-      <td>country1</td>
-    <td>country2</td>
-  <tr>
-    <td colspan="2">
-      <form method="POST">
-        <input name="product">
-        <input type="submit">
-      </form>
-    </td>
-    
-  </tr>
-    <tr>
-    <td>{{abc}}</td>
-    <td>{{abc}}</td>
-  </tr>
-  <tr>
-      <td>{{myvar}}</td>
-    <td>{{myvar}}</td>
-  </tr>
-</table>
- 
   
-
-
-</div>
 </body>
 </html>

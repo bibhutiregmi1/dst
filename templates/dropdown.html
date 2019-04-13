@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+</head>
+<body>
+  <p>Select a new car from the list.</p>
+  <form id="form1" action="/dropdown" method="POST" enctype="multipart/form-data">
+    <select name= colours method="GET" action="/">
+    {% for colour in colours %}
+    <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+    {% endfor %}
+	</select>
+    <input type="submit" value="Submit">
+  </form>
+  <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+  <div id="result">
+    {% if car_brand is defined %}
+        You have selected: {{ colour }}
+    {% endif %}
+  </div>
+
+  
+</body>
+
+</body>
+</html>

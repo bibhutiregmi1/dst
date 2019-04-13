@@ -24,23 +24,28 @@ def my_dashboard():
 def my_product():
     return render_template('display_product.html')
 
-@app.route('/product', methods=['POST'])
+@app.route('/product', methods=['POST','GET'])
 def my_product_post():
-	global productname
-	productname = request.form['product']
-	return productname
+	car_brand = request.form.get("cars", None)
+	# return render_template("display_product.html", car_brand = car_brand)
+	global processed_text,processed_text1
+	text = car_brand
+	processed_text = text
+	text1 = request.form.get("cars1", None)
+	processed_text1 = text1
+	return shop_basket()
 
 
-@app.route('/form')
+@app.route('/shop')
 def my_form():
     return render_template('form.html')
 
-@app.route('/form', methods=['POST'])
+@app.route('/shop', methods=['POST'])
 def my_form_post():
 	global processed_text,processed_text1
-	text = request.form['text']
+	text = request.form.get("text", None)
 	processed_text = text
-	text1 = request.form['text1']
+	text1 = request.form.get("text1", None)
 	processed_text1 = text1
 	return shop_basket()
 
