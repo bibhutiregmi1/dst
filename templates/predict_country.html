@@ -6,18 +6,20 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <h1 class="logo">Online Retail DSS</h1>
-        <strong><nav>
-          <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('my_form') }}">Shop Basket</a></li>
-            <li><a href="{{ url_for('my_predictiondashboard') }}"  style ="color: #FF6347;">
-            Prediction</a></li>
-            <li><a href="{{ url_for('my_predict_explain') }}">Prediction_explain</a></li>
-             <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
-          </ul>
-        </nav></strong>
+     <div class="container">
+    <h1 class="logo">Online Retail DSS</h1>
+    <strong><nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('my_predict_explain') }}">Shop basket</a></li>
+        <li ><a href="{{ url_for('my_form') }}">Dual Shop Basket</a></li>
+         <li><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #FF6347;">Prediction</a></li>
+
+            
+          <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
+      </ul>
+    </nav></strong>
+  </div>
        
       <!--   <strong><nav style="position: relative; z-index: 2;">
           <ul class="menu" style="background-color: #DFB887; style="float: right;">
@@ -25,8 +27,8 @@
             <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_form') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Shop</a></li>
           <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Prediction</a></li>
           </ul>
-        </nav></strong> -->
-      </div>
+        </nav></strong> --><!-- 
+      </div> -->
     </header>
     <body>
     <!-- <div class="container"> -->
@@ -41,7 +43,8 @@
 
             <b>Prediction options</b><br><br>
              <a href="{{ url_for('my_predictiondashboard') }}"  style="margin-left: 50px; margin-top: 50px; color: #444; text-decoration: none;  }">Prediction Product</a><br>
-              <a href="{{ url_for('my_predict_country') }}"  style="margin-left: 50px; margin-top: 50px; color: #FF6347; text-decoration: none;">Prediction Country</a>
+              <a href="{{ url_for('my_predict_country') }}"  style="margin-left: 50px; margin-top: 50px; color: #FF6347; text-decoration: none;">Prediction Country</a><br>
+              <a href="{{ url_for('my_compare') }}"  style="margin-left: 50px; margin-top: 50px; color: #444; text-decoration: none;">Compare Predictions</a>
            </td>
 
 

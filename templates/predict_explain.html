@@ -7,18 +7,33 @@
 
   <body>
     <header>
-        <div class="container">
+        <!-- <div class="container">
         <h1 class="logo">Online Retail DSS</h1>
         <strong><nav>
           <ul class="menu">
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('my_form') }}">Shop Basket</a></li>
-            <li><a href="{{ url_for('my_predictiondashboard') }}">Prediction</a></li>
+            <li><a href="{{ url_for('my_predictiondashboard') }}">Products paired</a></li>
+            <li><a href="{{ url_for('my_form') }}">Compare Shop Basket</a></li>
+            
             <li><a href="{{ url_for('my_predict_explain') }}" style ="color: #FF6347;">Prediction_explain</a></li>
              <li><a href="{{ url_for('my_compare') }}" >Compare</a></li>
           </ul>
         </nav></strong>
-      </div>
+      </div> -->
+     <div class="container">
+    <h1 class="logo">Online Retail DSS</h1>
+    <strong><nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('my_predict_explain') }}" style ="color: #FF6347;">Shop basket</a></li>
+        <li ><a href="{{ url_for('my_form') }}">Dual Shop Basket</a></li>
+         <li><a href="{{ url_for('my_predictiondashboard') }}" >Prediction</a></li>
+
+            
+          <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
+      </ul>
+    </nav></strong>
+  </div>
        <!--  <strong><nav style="position: relative; z-index: 2;">
           <ul class="menu" style="background-color: #DFB887; style="float: right;">
             <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('home') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Home</a></li>
@@ -31,7 +46,7 @@
     <body>     <div class="box">  
      <table width="50%"  align="left">
         <tr>
-   <td colspan="2"> <h1>Check your shopping basket data here</h1></td>
+   <td colspan="2">CHECK<a href="{{ url_for('my_form') }}"  style ="color: #FF6347; margin-left: 20px; margin-top: 50px; text-decoration: none;">Dual Shop Basket</a><br><br> <h1>Check your product to be paired here</h1></td>
   </tr>
   <tr>
     <td colspan="2">Enter the country you wish to see
