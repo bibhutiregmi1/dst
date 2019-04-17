@@ -7,21 +7,22 @@
   <body>
     <header>
       <div class="container">
-
         <h1 class="logo">DST web app</h1>
-       <strong><nav>
+        <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}" style ="color: #FF6347;">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('my_form') }}">Shop Basket</a></li>
-            <li><a href="{{ url_for('my_predictiondashboard') }}">Prediction</a></li>
+            <li><a href="{{ url_for('my_predictiondashboard') }}"  style ="color: #FF6347;">
+            Prediction</a></li>
              <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
           </ul>
         </nav></strong>
-        <!-- <strong><nav style="position: relative; z-index: 2;">
+       
+      <!--   <strong><nav style="position: relative; z-index: 2;">
           <ul class="menu" style="background-color: #DFB887; style="float: right;">
             <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('home') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Home</a></li>
             <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_form') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Shop</a></li>
-           <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Prediction</a></li>
+          <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Prediction</a></li>
           </ul>
         </nav></strong> -->
       </div>
@@ -35,16 +36,16 @@
        <iframe src="https://datastudio.google.com/embed/reporting/1jeug7AvejNDLsGFlsWZ566K9dEhUo87M/page/IcYm" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 0px; z-index: 1"/> -->
        <table>
          <tr>
-           <td id="first" style="background-color: #ddccee; width: 400px;">
-              this is a side pane<br>
-              the questions i want to address<br>
-              quest1<br>
-              question2<br>
-              question3
+          <td id="first" width: 400px;><br><br>
+
+            <b>Prediction options</b><br><br>
+             <a href="{{ url_for('my_predictiondashboard') }}"  style="margin-left: 50px; margin-top: 50px; color: #444; text-decoration: none;  }">Prediction Product</a><br>
+              <a href="{{ url_for('my_predict_country') }}"  style="margin-left: 50px; margin-top: 50px; color: #FF6347; text-decoration: none;">Prediction Country</a>
            </td>
 
+
            <td>
-              <iframe src="https://datastudio.google.com/embed/reporting/1jeug7AvejNDLsGFlsWZ566K9dEhUo87M/page/IcYm" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 50px; z-index: 1"/>
+              <iframe src="https://datastudio.google.com/embed/reporting/1JkU94Ud7k421U6FUYZG4b28ps8Y2JG2H/page/yTHn" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 50px; z-index: 1"/>
            </td>
          </tr>
        </table>
@@ -52,6 +53,4 @@
   </body>
 </html>
 
-<style type="text/css">
 
-</style>

@@ -6,25 +6,25 @@
   </head>
   <body>
     <header>
-      <div class="container">
-
+        <div class="container">
         <h1 class="logo">DST web app</h1>
-       <strong><nav>
+        <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}" style ="color: #FF6347;">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('my_form') }}">Shop Basket</a></li>
             <li><a href="{{ url_for('my_predictiondashboard') }}">Prediction</a></li>
-             <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
+             <li><a href="{{ url_for('my_compare') }}"  style ="color: #FF6347;">Compare</a></li>
           </ul>
         </nav></strong>
-        <!-- <strong><nav style="position: relative; z-index: 2;">
+      </div>
+       <!--  <strong><nav style="position: relative; z-index: 2;">
           <ul class="menu" style="background-color: #DFB887; style="float: right;">
             <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('home') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Home</a></li>
             <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_form') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Shop</a></li>
-           <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Prediction</a></li>
+          <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Prediction</a></li>
           </ul>
-        </nav></strong> -->
-      </div>
+        </nav></strong>
+      </div> -->
     </header>
     <body>
     <!-- <div class="container"> -->
@@ -33,21 +33,15 @@
       quest1<br>
       question2<br></div>
        <iframe src="https://datastudio.google.com/embed/reporting/1jeug7AvejNDLsGFlsWZ566K9dEhUo87M/page/IcYm" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 0px; z-index: 1"/> -->
-       <table>
-         <tr>
-           <td id="first" style="background-color: #ddccee; width: 400px;">
-              this is a side pane<br>
-              the questions i want to address<br>
-              quest1<br>
-              question2<br>
-              question3
-           </td>
+       <div class="box"><iframe src="https://datastudio.google.com/embed/reporting/1jeug7AvejNDLsGFlsWZ566K9dEhUo87M/page/IcYm" frameborder="0" scrolling="no" width="100%" height="512" align="left"> </iframe> </div>
 
-           <td>
-              <iframe src="https://datastudio.google.com/embed/reporting/1jeug7AvejNDLsGFlsWZ566K9dEhUo87M/page/IcYm" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 50px; z-index: 1"/>
-           </td>
-         </tr>
-       </table>
+     <div class="box">    <iframe src="https://datastudio.google.com/embed/reporting/1ctSUrZZY6ztp4WTfLbBU-l9UyGvIHORJ/page/yTHn" frameborder="0" scrolling="no" width="50%" height="512" align="right">
+      </iframe></div>
+       <div class="box">    <iframe src="https://datastudio.google.com/embed/reporting/1JkU94Ud7k421U6FUYZG4b28ps8Y2JG2H/page/yTHn" frameborder="0" scrolling="no" width="50%" height="512" align="right">
+    </iframe></div>
+   
+ 
+
     <!-- </div> -->
   </body>
 </html>

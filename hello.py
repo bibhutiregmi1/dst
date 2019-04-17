@@ -20,6 +20,21 @@ def home():
 def my_dashboard():
     return render_template('dashboard.html')
 
+@app.route('/predict_country')
+def my_predict_country():
+    return render_template('predict_country.html')
+
+@app.route('/predictiondashboard')
+def my_predictiondashboard():
+    return render_template('predictiondashboard.html')
+
+@app.route('/compare')
+def my_compare():
+    return render_template('compare.html')
+
+
+
+
 @app.route('/product')
 def my_product():
     return render_template('display_product.html')
@@ -87,7 +102,7 @@ def shop_basket():
 	    #df1_quantity = df.groupby(["Country","InvoiceDate"]).count().reset_index().sort_values('InvoiceNo', ascending = False).head()
 	    grouped = Basket_France.groupby(['yearmonth'])
 	    return grouped['Quantity'].agg(np.sum)
-    
+
 	def country_quantity():
 	    global df1_quantity
 	    df1_quantity = df.groupby('Country').count().reset_index().sort_values('InvoiceNo', ascending = False).head()
