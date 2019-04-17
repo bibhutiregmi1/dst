@@ -7,19 +7,21 @@
 <body>
 <header>
   <div class="container">
-    <h1 class="logo">DST web app</h1>
+    <h1 class="logo">Online Retail DSS</h1>
     <strong><nav>
       <ul class="menu">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li ><a href="{{ url_for('my_form') }}"  style ="color: #FF6347;">Shop Basket</a></li>
          <li><a href="{{ url_for('my_predictiondashboard') }}">Prediction</a></li>
+
+            <li><a href="{{ url_for('my_predict_explain') }}">Prediction_explain</a></li>
           <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
       </ul>
     </nav></strong>
   </div>
 </header>
 <div class="container">
-	this is form {{abc}}
+<br>
  
 <table cellpadding="10px" cellpadding="20px">
   <tr>
@@ -43,6 +45,7 @@
 
       <form id="form1" action="/shop" method="POST" enctype="multipart/form-data">
       <select id="mySelect" name = "text">
+        <option value="">--Select--</option>
        <option value="France">France</option>
       <option value="Australia">Australia</option>
       <option value="Netherlands">Netherlands</option>
@@ -82,6 +85,8 @@
     </select>
 
     <select id="mySelect" name = "text1">
+
+        <option value="">--Select--</option>
        <option value="France">France</option>
       <option value="Australia">Australia</option>
       <option value="Netherlands">Netherlands</option>

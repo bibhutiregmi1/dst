@@ -7,13 +7,14 @@
   <body>
     <header>
         <div class="container">
-        <h1 class="logo">DST web app</h1>
+          <h1 class="logo">Online Retail DSS</h1>
         <strong><nav>
           <ul class="menu">
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('my_form') }}">Shop Basket</a></li>
-            <li><a href="{{ url_for('my_predictiondashboard') }}"  style ="color: #FF6347;">
-            <li><a href="{{ url_for('my_compare') }}"  style ="color: #FF6347;">Compare</a></li>
+            <li><a href="{{ url_for('my_predictiondashboard') }}"  style ="color: #FF6347;">Prediction</a></li> 
+              <li><a href="{{ url_for('my_predict_explain') }}">Prediction_explain</a></li>
+            <li><a href="{{ url_for('my_compare') }}">Compare</a></li>
           </ul>
         </nav></strong>
       </div>
@@ -44,7 +45,7 @@
 
            <td>
             
-              <iframe src="https://datastudio.google.com/embed/reporting/1ctSUrZZY6ztp4WTfLbBU-l9UyGvIHORJ/page/yTHn" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 50px; z-index: 1"/>
+              <iframe src="https://datastudio.google.com/embed/reporting/1ctSUrZZY6ztp4WTfLbBU-l9UyGvIHORJ/page/yTHn" style="border: 0; width: 85%; height: 100%; display: block; position: absolute; right: 0px; top: 50px; z-index: 1"/>
            </td>
          </tr>
        </table>

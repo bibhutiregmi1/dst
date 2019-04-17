@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dst app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+
+  <body>
+    <header>
+        <div class="container">
+        <h1 class="logo">Online Retail DSS</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('my_form') }}">Shop Basket</a></li>
+            <li><a href="{{ url_for('my_predictiondashboard') }}">Prediction</a></li>
+            <li><a href="{{ url_for('my_predict_explain') }}" style ="color: #FF6347;">Prediction_explain</a></li>
+             <li><a href="{{ url_for('my_compare') }}" >Compare</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+       <!--  <strong><nav style="position: relative; z-index: 2;">
+          <ul class="menu" style="background-color: #DFB887; style="float: right;">
+            <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('home') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Home</a></li>
+            <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_form') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Shop</a></li>
+          <li style="margin-left: 35px; display: inline;"><a href="{{ url_for('my_predictiondashboard') }}" style ="color: #444; text-decoration: none; background-color: #DFB887;">Prediction</a></li>
+          </ul>
+        </nav></strong>
+      </div> -->
+    </header>
+    <body>     <div class="box">  
+     <table width="50%"  align="left">
+        <tr>
+   <td colspan="2"> <h1>Check your shopping basket data here</h1></td>
+  </tr>
+  <tr>
+    <td colspan="2">Enter the country you wish to see
+     <!-- <form method="POST">
+      <select name="text">
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+      </select>
+        <input type="submit" value="Submit">
+      </form> -->
+
+      <!-- <form method="POST">
+        <input name="text">
+        <input name="text1">
+        <input type="submit">
+      </form> -->
+
+      <form id="form1" action="/predict_explain" method="POST" enctype="multipart/form-data">
+      <select id="mySelect" name = "text">
+        <option value="">--Select--</option>
+       <option value="France">France</option>
+      <option value="Australia">Australia</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Germany">Germany</option>
+      <option value="Norway">Norway</option>
+      <option value="EIRE">EIRE</option>
+      <option value="Switzerland">Switzerland</option>
+      <option value="Spain">Spain</option>
+      <option value="Poland">Poland</option>
+      <option value="Portugal">Portugal</option>
+      <option value="Italy">Italy</option>
+      <option value="Belgium">Belgium</option>
+      <option value="Lithuania">Lithuania</option>
+      <option value="Japan">Japan</option>
+      <option value="Iceland">Iceland</option>
+      <option value="Channel Islands">Channel Islands</option>
+      <option value="Denmark">Denmark</option>
+      <option value="Cyprus">Cyprus</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Austria">Austria</option>
+      <option value="Israel">Israel</option>
+      <option value="Finland">Finland</option>
+      <option value="Bahrain">Bahrain</option>
+      <option value="Greece">Greece</option>
+      <option value="Hong Kong">Hong Kong</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Lebanon">Lebanon</option>
+      <option value="United Arab Emirates">United Arab Emirates</option>
+      <option value="Saudi Arabia">Saudi Arabia</option>
+      <option value="Czech Republic">Czech Republic</option>
+      <option value="Canada">Canada</option>
+      <option value="Brazil">Brazil</option>
+      <option value="USA">USA</option>
+      <option value="European Community">European Community</option>
+      <option value="Malta">Malta</option>
+      <option value="RSA">RSA</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+    </td>
+
+  </tr>
+  <tr>
+    <td>country: {{abc}}</td>
+  </tr>
+  
+ 
+  <tr>
+      <td id="first"><strong>Suggestion:</strong><br>{{prediction}}<br><br>{{myvar}}</td>
+  </tr>
+</table>
+
+    <!-- <div class="container"> -->
+     <!--  <div id="ex1" >this is a side pane<br>
+      the questions i want to address<br>
+      quest1<br>
+      question2<br></div>
+       <iframe src="https://datastudio.google.com/embed/reporting/1jeug7AvejNDLsGFlsWZ566K9dEhUo87M/page/IcYm" style="border: 0; width: 75%; height: 100%; display: block; position: absolute; right: 0px; top: 0px; z-index: 1"/> -->
+      </div>
+<table width="50%" align="left"><tr><td>
+     <div class="box">  Check Product Information here  <iframe src="https://datastudio.google.com/embed/reporting/1xoXsMNkfPtJQ8sWn7M7tQ7P391ptk7bf/page/MDSn" frameborder="0" scrolling="no" width="100%" height="512" align="top">
+      </iframe></div></td></tr>
+      <tr><td>
+       <div class="box">    <iframe src="https://datastudio.google.com/embed/reporting/1xoXsMNkfPtJQ8sWn7M7tQ7P391ptk7bf/page/MDSn" frameborder="0" scrolling="no" width="100%" height="512" align="bottom">
+    </iframe></div></td></tr>
+   </table>
+ 
+
+    <!-- </div> -->
+  </body>
+</html>
+
+<style type="text/css">
+table, th, td {
+              border: 0px;
+              table-layout: auto; 
+              padding: 6px;
+              border-spacing: 8px 5px;
+              border-collapse: separate;
+            }
+</style>

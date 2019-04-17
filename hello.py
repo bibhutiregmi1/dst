@@ -33,6 +33,20 @@ def my_compare():
     return render_template('compare.html')
 
 
+@app.route('/predict_explain')
+def my_predict_explain():
+    return render_template('predict_explain.html')
+
+@app.route('/predict_explain', methods=['POST'])
+def my_form_post1():
+	global processed_text,processed_text1,form_indicator
+	text = request.form.get("text", None)
+	processed_text = text
+
+	form_indicator = 'predict_explain'
+	text1 = request.form.get("", None)
+	processed_text1 = text1
+	return shop_basket()
 
 
 @app.route('/product')
@@ -143,6 +157,7 @@ def shop_basket():
 		str1['antecedents'] = str1['antecedents'].map(lambda x: ", ".join(x))
 		str1['consequents'] = str1['consequents'].map(lambda x: ", ".join(x))
 		asd = str1[['antecedents','consequents']]
+		asd = asd.rename(columns={'antecedents': 'Product', 'consequents': 'is bought together with'})
 		# str1['antecendents']=str1['antecedents'].astype('str')
 		# str1['antecendents'] = str1['antecendents'].map(lambda x: ", ".join(x)				
 		# str1['consequents'] = str1['consequents'].map(lambda x: ", ".join(x)
@@ -152,16 +167,20 @@ def shop_basket():
 		return value
 
 	def displayproduct():
-		if processed_text != "":
-			if processed_text1 != "":
-				print("case1")
-				return render_template('form.html',abc1 = processed_text1, abc = processed_text, myvar = shopping_basket(processed_text),myvar1 = shopping_basket(processed_text1))
-			print("Case2")
-			return render_template('form.html',abc1="",myvar1="",abc = processed_text, myvar = shopping_basket(processed_text))
+		if form_indicator == 'predict_explain':
+			print("my_predict_explain")
+			return render_template('predict_explain.html',abc1="",myvar1="",abc = processed_text, myvar = shopping_basket(processed_text), prediction="These two products are not purchased in same quantity so pair them together for max revenue")
 			
-		elif processed_text1 != "":
-			print("case3")
-			return render_template('form.html',abc="", myvar="", abc1 = processed_text1, myvar1 = shopping_basket(processed_text1))
+			if processed_text != "":
+				if processed_text1 != "":
+					print("case1")
+					return render_template('form.html',abc1 = processed_text1, abc = processed_text, myvar = shopping_basket(processed_text),myvar1 = shopping_basket(processed_text1))
+				print("Case2")
+				return render_template('form.html',abc1="",myvar1="",abc = processed_text, myvar = shopping_basket(processed_text))
+				
+			elif processed_text1 != "":
+				print("case3")
+				return render_template('form.html',abc="", myvar="", abc1 = processed_text1, myvar1 = shopping_basket(processed_text1))
 		# return 'hello'
 	print("country is")
 	print(processed_text)
